@@ -2,8 +2,6 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import TodoList from './component/TodoList';
-import Loading from './component/Loading';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 function App() {
@@ -16,7 +14,7 @@ function App() {
       })  
   }, []);
 
-  return <div> {todos ? <TodoList todos={todos}/> : <Loading/> }</div>;
+  return <div>{todos && <TodoList TODO={todos}/>}</div>;
     
 }
 
